@@ -6,7 +6,7 @@
 /*   By: adanylev <adanylev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:02:00 by adanylev          #+#    #+#             */
-/*   Updated: 2024/04/24 14:55:25 by adanylev         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:09:58 by adanylev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ void		free_daughter(t_pipex *pipex);
 char 		**cool_split(char *str, char c);
 int			is_space(char c);
 int			is_quote(char letter);
-
+void		*my_malloc(size_t bytes);
 
 #endif

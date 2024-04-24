@@ -1,4 +1,4 @@
-SRCS =	main.c family.c find_command.c exit.c split_quotes.c
+SRCS =	main.c family.c find_command.c exit.c split_quotes.c utils.c
 
 OBJS = $(SRCS:.c=.o)
 
