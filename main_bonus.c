@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adanylev <adanylev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 11:01:39 by adanylev          #+#    #+#             */
-/*   Updated: 2024/04/25 14:30:15 by adanylev         ###   ########.fr       */
+/*   Created: 2024/04/25 13:50:45 by adanylev          #+#    #+#             */
+/*   Updated: 2024/04/25 14:39:31 by adanylev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_pipex.h"
 
 void	pip(t_pipex *pipex, char **argv, char **envp)
 {
@@ -58,17 +58,28 @@ void	parse_path(char **envp, t_pipex *pipex)
 }
 
 
+char	**get_coms(char **argv, int argc)
+{
+	char **coms;
+	int i;
+
+	i = 0;
+	coms = malloc(sizeof(char *) * argc);
+	while (i < argc)
+	{
+		coms
+	}
+}
 
 int	main(int argc, char **argv, char **envp)
 {
 	t_pipex	pipex;
 	
-	if (argc != 5)
+	if (argc < 5)
 		perror("Input error\n");
 	pipex.infile = open(argv[1], O_RDONLY);
-	pipex.outfile = open(argv[4], O_CREAT | O_RDWR | O_TRUNC, 0644);
-	pipex.cmd1 = ft_split(argv[2], ' ');
-	pipex.cmd2 = ft_split(argv[3], ' ');
+	pipex.outfile = open(argv[argc - 1], O_CREAT | O_RDWR | O_TRUNC, 0644);
+	pipex.cmds = get_coms(argv, argc);
 	parse_path(envp, &pipex);
 	pip(&pipex, argv, envp);
 	free_parent(&pipex);

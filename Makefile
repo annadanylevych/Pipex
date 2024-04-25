@@ -1,4 +1,6 @@
-SRCS =	main.c family.c find_command.c exit.c split_quotes.c utils.c
+SRCS =	main.c family.c find_command.c exit.c 
+
+SRCS_BONUS = main_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -25,6 +27,9 @@ $(NAME): $(OBJS) make_libs
 make_libs:
 	$(MAKE) -C $(LIBFTDIR)
 
+bonus: 
+	
+
 clean:
 	$(RM) $(OBJS) 
 	$(MAKE) -C $(LIBFTDIR) clean
@@ -32,3 +37,5 @@ clean:
 fclean: clean
 	$(RM) $(NAME) 
 	$(MAKE) -C $(LIBFTDIR) fclean
+
+re: clean $(NAME)
