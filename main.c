@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adanylev <adanylev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: annadanylevych <annadanylevych@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:01:39 by adanylev          #+#    #+#             */
-/*   Updated: 2024/04/25 14:30:15 by adanylev         ###   ########.fr       */
+/*   Updated: 2024/04/27 20:35:06 by annadanylev      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	pip(t_pipex *pipex, char **argv, char **envp)
 {
 	int	status;
 
-	pipe(pipex->fd);
+	if (pipe(pipex->fd) == -1)
+		error_other("Pipe issue\n");
 	pipex->son = fork();
 	if (pipex->son < 0)
 		error_other("Fork issue\n");
