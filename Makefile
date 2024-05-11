@@ -1,6 +1,6 @@
 SRCS =	main.c family.c find_command.c exit.c 
 
-SRCS_BONUS = main_bonus.c execution_bonus.c exit_bonus.c 
+SRCS_BONUS = main_bonus.c execution_bonus.c exit_bonus.c utils_bonus.c here_doc_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -44,4 +44,4 @@ fclean: clean
 	$(RM) $(NAME)  $(NAME_BONUS)
 	$(MAKE) -C $(LIBFTDIR) fclean
 
-re: clean $(NAME) $(NAME_BONUS)
+re: clean $(NAME)

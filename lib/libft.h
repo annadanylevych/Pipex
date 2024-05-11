@@ -3,18 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adanylev <adanylev@student.42barcel>       +#+  +:+       +#+        */
+/*   By: adanylev <adanylev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 19:07:21 by adanylev          #+#    #+#             */
-/*   Updated: 2023/09/21 14:51:05 by adanylev         ###   ########.fr       */
+/*   Updated: 2024/05/11 17:47:57 by adanylev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
+# include <fcntl.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -38,7 +44,6 @@ void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				ft_bzero(void *s, size_t n);
-char				*ft_strchr(const char *s, int c);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
@@ -67,5 +72,19 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+int					ft_printf(const char *str, ...);
+int					ft_printchar(char c, int *err);
+int					ft_printstr(char *s, int *err);
+int					ft_printnum(int n, int *err);
+int					ft_printnumu(unsigned int n, int *err);
+int					ft_printhex(unsigned int a, char *base, int *err);
+int					ft_printptr(void *ptr, int *err);
+char				*get_next_line(int fd);
+char				*ft_strjoing(char *s1, char *s2);
+char				*ft_strchr(const char *s, int c);
+char				*line_extraction(char *storage);
+char				*ft_substrg(char *s, int a, int b);
+int					ft_strleng(char *s);
+char				*ft_strjoin_copy(char *join, char *s1, char *s2);
 
 #endif

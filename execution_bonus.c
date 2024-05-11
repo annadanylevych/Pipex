@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execution_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annadanylevych <annadanylevych@student.    +#+  +:+       +#+        */
+/*   By: adanylev <adanylev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 20:44:23 by annadanylev       #+#    #+#             */
-/*   Updated: 2024/04/28 19:02:06 by annadanylev      ###   ########.fr       */
+/*   Updated: 2024/05/11 16:12:40 by adanylev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,6 @@ void	son_process(t_pipex *pipex, char *cmds, char **envp)
     char    **command;
 
     command = ft_split(cmds, ' ');
-	close(pipex->fd[0]);
-	dup2(pipex->fd[1], STDOUT_FILENO);
-	close(pipex->fd[1]);
 	if (access(command[0], X_OK) >= 0)
 		cmd_path = command[0];
 	else

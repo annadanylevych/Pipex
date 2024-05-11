@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adanylev <adanylev@student.42barcel>       +#+  +:+       +#+        */
+/*   By: adanylev <adanylev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 17:17:55 by adanylev          #+#    #+#             */
-/*   Updated: 2023/09/15 21:54:17 by adanylev         ###   ########.fr       */
+/*   Created: 2023/09/24 19:24:33 by adanylev          #+#    #+#             */
+/*   Updated: 2023/12/16 20:36:09 by adanylev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "libft.h"
+
+int	ft_printstr(char *s, int *err)
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	if (!s)
+		s = "(null)";
+	while (s[i] && !*err)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		ft_printchar(s[i], err);
+		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)s);
-	return (0);
+	return (i);
 }

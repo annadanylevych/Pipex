@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annadanylevych <annadanylevych@student.    +#+  +:+       +#+        */
+/*   By: adanylev <adanylev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:51:19 by adanylev          #+#    #+#             */
-/*   Updated: 2024/04/28 18:17:22 by annadanylev      ###   ########.fr       */
+/*   Updated: 2024/05/11 17:43:48 by adanylev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,13 @@ typedef struct s_pipex
 	pid_t	*son;
 	char	**paths;
 	char	**cmds;
+	int		num_com;
+	char	*limiter;
 }			t_pipex;
 
+char		**get_coms_here(char **argv, int argc);
+int			heredoc(t_pipex *pipex);
+int			count_coms(char **comds);
 void		waiting(int *status, int argc);
 void		pip(t_pipex *pipex, char **envp, int argc);
 void		parse_path(char **envp, t_pipex *pipex);
