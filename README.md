@@ -1,6 +1,6 @@
 # Pipex
 
-Welcome to Pipex, a project from 42 School focused on understanding inter-process communication in Unix systems. This project involves creating a program that mimics the behavior of a shell pipeline, allowing data to be passed between commands via pipes. Working on Pipex introduced key concepts in process management, piping, and redirection in C.
+Welcome to Pipex, a project from 42 School focused on understanding inter-process communication in Unix systems. This project involves creating a program that mimics the behavior of a shell pipeline, allowing data to be passed between commands via pipes. Working on Pipex introduced key concepts in process management, piping, and redirection in C. Also, I have done the bonus part, though I did not shorten the functions to be able to submit it in 42 School.
 
 ## Project Overview
 
